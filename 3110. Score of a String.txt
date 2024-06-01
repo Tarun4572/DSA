@@ -1,0 +1,14 @@
+class Solution {
+    public int scoreOfString(String s) {
+        int score = 0;
+        int prev = 0;
+        for(char c: s.toCharArray()) {
+
+            int asciiValue = (int)c;
+            score += prev == 0 ? 0 : Math.abs(prev - asciiValue);
+            prev = asciiValue; 
+        }
+
+        return score;
+    }
+}
